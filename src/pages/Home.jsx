@@ -3,9 +3,10 @@ import Container from "../components/Container"
 
 const Home = () => {
   return (
-    <div className="  border-black bg-very-light-gray border min-h-screen font-josefin-sans">
+    <div className="border-black  border min-h-screen font-josefin-sans">
         <Header />
         <Container />
+        
     </div>
   )
 }
