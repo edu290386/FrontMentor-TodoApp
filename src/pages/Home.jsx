@@ -1,14 +1,11 @@
-import Header from "../components/Header"
-import Container from "../components/Container"
+import Tasks from "../components/Tasks";
 
 const Home = () => {
   return (
-    <div className="border-black  border min-h-screen font-josefin-sans">
-        <Header />
-        <Container />
-        
+    <div className="flex justify-center ">
+      <Tasks />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

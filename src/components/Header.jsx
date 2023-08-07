@@ -1,19 +1,14 @@
-import Moon from '../assets/icon-moon.svg'
-import Sun from '../assets/icon-sun.svg'
-
+import imageDesktop from "../assets/bg-desktop-light.jpg";
+import imageMobile from "../assets/bg-mobile-light.jpg";
 const Header = () => {
   return (
-    <div>
-        <article className='flex justify-between items-center bg-mountain-mobile-light bg-cover h-48 pb-24 px-5 '>
-            <h1 className='font-semibold text-3xl text-white tracking-[0.4em] '>TODO</h1>
-            <div className='flex items-center'>
-                <img src={Sun} alt="" />
-                <img src={Moon} alt="" />
-            </div>
-        </article>
-        
+    <div className="h-screen">
+      <picture>
+        <source media="(min-width: 640px)" srcSet={imageDesktop} />
+        <img className="w-full" src={imageMobile} alt="" />
+      </picture>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

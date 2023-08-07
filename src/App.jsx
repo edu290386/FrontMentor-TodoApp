@@ -1,12 +1,13 @@
 
 import './App.css'
 import Home from './pages/Home'
-
+import Header from './components/Header'
 function App() {
 
 
   return (
-    <div className='w-[100%] font-josefin-sans bg-very-light-grayish-blue'>
+    <div className='font-josefin-sans bg-very-light-grayish-blue '>
+      <Header />
       <Home />
     </div>
   )
