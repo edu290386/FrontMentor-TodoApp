@@ -3,6 +3,7 @@ import Sun from "../assets/icon-sun.svg";
 import Container from "./Container";
 import { useState, useRef, useEffect } from "react";
 import {  get } from "../services/Services";
+import { TaskModel } from "../models/TaskModel";
 
 const Tasks = () => {
   const [textTask, setTextTask] = useState({});
@@ -23,7 +24,18 @@ const Tasks = () => {
 
   const getTaskList = async () => {
     const dataTask = await get();
-    setTaskList(dataTask);
+    const tasksModels = dataTask.map((task) => {
+      return new TaskModel(
+        task.task,
+        task.status,
+        task.deletedAt,
+        task.dondeAt,
+        task.createdAt,
+        task.id
+      );
+    })
+    console.log(tasksModels)
+    setTaskList(tasksModels);
   }
 
 
@@ -32,7 +44,7 @@ const Tasks = () => {
   }, []);
 
   return (
-    <div className="max-w-lg w-[90%] absolute top-10 sm:top-16 flex flex-col items-center justify-center sm:text-xl">
+    <div className="max-w-lg w-[90%] absolute top-10 sm:top-16 flex flex-col items-center justify-center sm:text-xl ">
       <article className="w-full flex items-center justify-between mb-6 sm:mb-10">
         <h1 className=" font-semibold text-3xl sm:text-5xl text-white tracking-[0.4em] ">
           TODO

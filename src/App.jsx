@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-    <div className='font-josefin-sans bg-very-light-grayish-blue '>
+    <div className='font-josefin-sans bg-very-light-grayish-blue  min-h-screen'>
       <Header />
       <Home />
     </div>
