@@ -4,8 +4,9 @@ import check from "../assets/icon-check.svg";
 const Container = (props) => {
   const { taskList } = props;
 
+
   return (
-    <div className="max-w-lg w-full flex items-center justify-center text-very-dark-grayish-blue-lt text-sm sm:text-lg ">
+    <div className="max-w-lg w-[90%] flex items-center justify-center text-very-dark-grayish-blue-lt text-sm sm:text-lg ">
       <section className="pt-4 overflow-hidden rounded-b-lg w-full ">
         <div className=" flex flex-col items-center overflow-hidden ">
           <article className="w-full rounded-t-lg overflow-hidden divide-y-2 ">
@@ -28,7 +29,7 @@ const Container = (props) => {
           </article>
 
           <article className=" border-t-2 border-gray-200 py-3 sm:py-4 px-3 bg-white w-full rounded-b-lg flex justify-between text-sm sm:text-base text-light-grayish-blue-lt ">
-            <div className="shrink-0">5 items left</div>
+            <div className="shrink-0"></div>
 
             <div className=" text-base sm:text-lg font-lg w-full justify-center gap-x-2 hidden sm:flex">
               <div className=" cursor-pointer text-bright-blue">All</div>
