@@ -27,10 +27,9 @@ const Container = (props) => {
               </div>
             ))}
           </article>
-
           <article className=" border-t-2 border-gray-200 py-3 sm:py-4 px-3 bg-white w-full rounded-b-lg flex justify-between text-sm sm:text-base text-light-grayish-blue-lt ">
-            <div className="shrink-0"></div>
-
+            <div className="shrink-0">{`${taskList.filter((task) => task.doneAt == null).length} items left`
+            }</div>
             <div className=" text-base sm:text-lg font-lg w-full justify-center gap-x-2 hidden sm:flex">
               <div className=" cursor-pointer text-bright-blue">All</div>
               <div className=" cursor-pointer text-dark-grayish-blue hover:text-very-dark-grayish-blue-lt">
@@ -40,21 +39,8 @@ const Container = (props) => {
                 Completed
               </div>
             </div>
-
             <div className="shrink-0">Clear Completed</div>
           </article>
-        </div>
-        <div className="my-4 text-lg font-lg w-full bg-white flex justify-center gap-x-4 py-2 rounded-lg sm:hidden">
-          <div className=" cursor-pointer text-bright-blue">All</div>
-          <div className=" cursor-pointer text-dark-grayish-blue hover:text-very-dark-grayish-blue-lt">
-            Active
-          </div>
-          <div className="cursor-pointer text-dark-grayish-blue hover:text-very-dark-grayish-blue-lt">
-            Completed
-          </div>
-        </div>
-        <div className=" text-center py-12 text-dark-grayish-blue ">
-          Drag and drop to reorder list
         </div>
       </section>
     </div>

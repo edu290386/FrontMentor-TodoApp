@@ -1,6 +1,7 @@
 import TitleApp from "../components/TitleApp";
 import Container from "../components/Container";
 import FormTask from "../components/FormTask";
+import Statistics from "../components/Statistics";
 import { useState, useEffect } from "react";
 import { get, post } from "../services/Services";
 import { TaskModel } from "../models/TaskModel";
@@ -10,7 +11,6 @@ const Home = () => {
 
   const getTaskList = async () => {
     const dataTask = await get();
-    console.log(dataTask);
     const tasksModels = dataTask.map((task) => {
       return new TaskModel(
         task.id,
@@ -40,6 +40,7 @@ const Home = () => {
         <TitleApp />
         <FormTask addTaskList={addTaskList} />
         <Container taskList={taskList} />
+        <Statistics taskList={taskList} />
       </div>
     </div>
   );
