@@ -6,7 +6,7 @@ const Statistics = (props) => {
   };
 
   return (
-    <div className="w-[90%]">
+    <div className="w-full">
       <div className="my-4 text-lg font-lg w-full bg-white flex justify-center gap-x-4 py-2 rounded-lg sm:hidden">
         <div
           onClick={() => showTask(1)}

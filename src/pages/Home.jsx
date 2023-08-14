@@ -3,11 +3,11 @@ import Container from "../components/Container";
 import FormTask from "../components/FormTask";
 
 import { useState, useEffect } from "react";
-import { get, post } from "../services/Services";
+import { get, post, update, destroy } from "../services/Services";
 import { TaskModel } from "../models/TaskModel";
 
 const Home = () => {
-  const [taskList, setTaskList] = useState([]);
+  let [taskList, setTaskList] = useState([]);
 
   const getTaskList = async () => {
     const dataTask = await get();
@@ -29,6 +29,27 @@ const Home = () => {
     await getTaskList();
   };
 
+  const doneTask = async (id) => {
+    const bodyFilter = taskList.find(task => task.id === id);
+    let body = bodyFilter.doneAt
+    console.log(body)
+    body = body === null ? { doneAt: new Date() } : { doneAt: null };
+    await update(id, body);
+    await getTaskList();
+  };
+
+  const deleteTask = async (id) => {
+    await destroy(id);
+    await getTaskList();
+  };
+  
+  const updateAllTasks = async () => {
+    const filteredTask = taskList.filter(task => task.doneAt !== null)
+    filteredTask.forEach(async task => 
+    await deleteTask(task.id))
+   
+  };
+
   useEffect(() => {
     getTaskList();
   }, []);
@@ -38,7 +59,12 @@ const Home = () => {
       <div className="max-w-lg w-full absolute top-10 sm:top-16 flex flex-col items-center justify-center sm:text-xl ">
         <TitleApp />
         <FormTask addTaskList={addTaskList} />
-        <Container taskList={taskList} />
+        <Container
+          taskList={taskList}
+          doneTask={doneTask}
+          deleteTask={deleteTask}
+          updateAllTasks={updateAllTasks}
+        />
       </div>
     </div>
   );

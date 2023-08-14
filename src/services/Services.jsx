@@ -25,3 +25,38 @@ export const get = async () => {
       console.log(error);
     }
   };
+
+  export const update = async (id, body) => {
+    try {
+      console.log(id, body);
+    
+      const response = await fetch(`${url}/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  export const destroy = async (id) => {
+    try {
+      const response = await fetch(`${url}/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
