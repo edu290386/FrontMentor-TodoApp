@@ -30,9 +30,8 @@ const Home = () => {
   };
 
   const doneTask = async (id) => {
-    const bodyFilter = taskList.find(task => task.id === id);
-    let body = bodyFilter.doneAt
-    console.log(body)
+    const bodyFilter = taskList.find((task) => task.id === id);
+    let body = bodyFilter.doneAt;
     body = body === null ? { doneAt: new Date() } : { doneAt: null };
     await update(id, body);
     await getTaskList();
@@ -42,12 +41,10 @@ const Home = () => {
     await destroy(id);
     await getTaskList();
   };
-  
+
   const updateAllTasks = async () => {
-    const filteredTask = taskList.filter(task => task.doneAt !== null)
-    filteredTask.forEach(async task => 
-    await deleteTask(task.id))
-   
+    const filteredTask = taskList.filter((task) => task.doneAt !== null);
+    filteredTask.forEach(async (task) => await deleteTask(task.id));
   };
 
   useEffect(() => {
