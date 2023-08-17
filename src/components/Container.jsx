@@ -43,8 +43,8 @@ const Container = (props) => {
               setFilterTask={setFilterTask}
             />
           </article>
-          <article className=" border-t-2 border-gray-200 py-3 sm:py-4 px-3 bg-white w-full rounded-b-lg flex justify-between text-sm sm:text-base text-light-grayish-blue-lt ">
-            <div className="shrink-0">{`${
+          <article className=" border-t-2 border-gray-200 py-3 sm:py-4 px-3 bg-white dark:bg-[#2a2c3e] w-full rounded-b-lg flex justify-between text-sm sm:text-base text-light-grayish-blue-lt ">
+            <div className="shrink-0 dark:text-dark-grayish-blue">{`${
               filterTask.filter((task) => task.doneAt == null).length
             } items left`}</div>
             <div className=" text-base sm:text-lg font-lg w-full justify-center gap-x-2 hidden sm:flex">
@@ -67,7 +67,7 @@ const Container = (props) => {
                 Completed
               </div>
             </div>
-            <div onClick={clearCompleted} className="shrink-0 cursor-pointer">
+            <div onClick={clearCompleted} className="shrink-0 cursor-pointer dark:text-dark-grayish-blue">
               Clear Completed
             </div>
           </article>

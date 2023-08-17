@@ -21,7 +21,7 @@ const FormTask = (props) => {
       <form className="w-screen max-w-lg text-center" onSubmit={addTask}>
         <input
           type="text"
-          className="bg-white w-[90%] mb-1 sm:mb-4 py-2 sm:py-4 pl-3 rounded "
+          className="bg-white dark:bg-[#2a2c3e] w-[90%] mb-1 sm:mb-4 py-2 sm:py-4 pl-3 rounded "
           placeholder="Create a new todo..."
           onChange={handleInput}
           name="tasks"

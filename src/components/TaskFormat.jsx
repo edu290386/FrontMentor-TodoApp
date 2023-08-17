@@ -31,7 +31,7 @@ const TaskFormat = (props) => {
         {filterTask.map((task) => (
           <div
             key={task.id}
-            className="  bg-white py-3 sm:py-4 flex justify-between items-center"
+            className=" bg-white dark:bg-[#2a2c3e] py-3 sm:py-4 flex justify-between items-center"
           >
             <div className="flex grow">
               <div
@@ -42,12 +42,12 @@ const TaskFormat = (props) => {
                     : ""
                 }`}
               >
-                <img src={check} alt="" />
+                <img className={`${task.doneAt ? "" : "dark:hidden"}`} src={check} alt="" />
               </div>
               <TaskCard  task={task} />
             </div>
             <div onClick={() => handleDelete(task.id)}>
-              <img src={cross} className="mr-3 cursor-pointer w-3" alt="" />
+              <img src={cross} className="mr-3 cursor-pointer w-3 " alt="" />
             </div>
           </div>
         ))}

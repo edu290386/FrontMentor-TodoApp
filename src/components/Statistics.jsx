@@ -7,7 +7,7 @@ const Statistics = (props) => {
 
   return (
     <div className="w-full">
-      <div className="my-4 text-lg font-lg w-full bg-white flex justify-center gap-x-4 py-2 rounded-lg sm:hidden">
+      <div className="my-4 text-lg font-lg w-full flex justify-center gap-x-4 py-2 rounded-lg sm:hidden">
         <div
           onClick={() => showTask(1)}
           className=" cursor-pointer text-bright-blue"

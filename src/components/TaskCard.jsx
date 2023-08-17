@@ -20,8 +20,8 @@ const TaskCard = ({ task }) => {
       {...listeners}
       className={
         task.doneAt
-          ? "cursor-pointer line-through text-light-grayish-blue-lt grow"
-          : "cursor-pointer grow"
+          ? "cursor-pointer line-through text-light-grayish-blue-lt grow dark:text-dark-grayish-blue"
+          : "cursor-pointer text-dark-grayish-blue dark:text-light-grayish-blue-lt grow"
       }
     >
       <div className="grow">{task.task}</div>
