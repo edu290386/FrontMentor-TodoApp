@@ -27,7 +27,7 @@ const Statistics = (props) => {
           Completed
         </div>
       </div>
-      <div className=" text-center py-12 text-dark-grayish-blue ">
+      <div className=" text-center py-12 text-dark-grayish-blue dark:bg-very-dark-blue">
         Drag and drop to reorder list
       </div>
     </div>

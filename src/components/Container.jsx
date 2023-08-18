@@ -18,7 +18,7 @@ const Container = (props) => {
   };
 
   const handleDone = (value) => {
-    console.log(value);
+
     doneTask(value);
   };
 
@@ -35,7 +35,7 @@ const Container = (props) => {
     <div className="max-w-lg w-[90%] flex items-center justify-center text-very-dark-grayish-blue-lt text-sm sm:text-lg ">
       <section className="pt-4 overflow-hidden rounded-b-lg w-full ">
         <div className=" flex flex-col items-center overflow-hidden ">
-          <article className="w-full rounded-t-lg overflow-hidden divide-y-2 ">
+          <article className="w-full rounded-t-lg overflow-hidden divide-y-2 dark:divide-dark-grayish-blue">
             <TaskFormat
               filterTask={filterTask}
               handleDelete={handleDelete}
@@ -43,7 +43,7 @@ const Container = (props) => {
               setFilterTask={setFilterTask}
             />
           </article>
-          <article className=" border-t-2 border-gray-200 py-3 sm:py-4 px-3 bg-white dark:bg-[#2a2c3e] w-full rounded-b-lg flex justify-between text-sm sm:text-base text-light-grayish-blue-lt ">
+          <article className=" border-t-2 dark:border-t-dark-grayish-blue py-3 sm:py-4 px-3 bg-white dark:bg-[#2a2c3e] w-full rounded-b-lg flex justify-between text-sm sm:text-base text-light-grayish-blue-lt ">
             <div className="shrink-0 dark:text-dark-grayish-blue">{`${
               filterTask.filter((task) => task.doneAt == null).length
             } items left`}</div>

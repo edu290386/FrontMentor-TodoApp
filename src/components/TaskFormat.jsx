@@ -1,6 +1,3 @@
-import cross from "../assets/icon-cross.svg";
-import check from "../assets/icon-check.svg";
-
 import { closestCenter, DndContext } from "@dnd-kit/core";
 import {
   SortableContext,
@@ -36,18 +33,25 @@ const TaskFormat = (props) => {
             <div className="flex grow">
               <div
                 onClick={() => handleDone(task.id)}
-                className={`cursor-pointer w-5 h-5 mt-1 rounded-full border-gray-200 border mx-3  flex justify-center items-center ${
+                className={`cursor-pointer w-5 h-5 mt-1 rounded-full  border mx-3 flex justify-center items-center ${
                   task.doneAt
                     ? "bg-gradient-to-br from-grad-first to-grad-second"
                     : ""
                 }`}
               >
-                <img className={`${task.doneAt ? "" : "dark:hidden"}`} src={check} alt="" />
+                <svg
+                  className={`w-3 h-2 fill-none stroke-2 stroke-white ${
+                    task.doneAt ? "dark:stroke-white" : "dark:stroke-[#2a2c3e]"
+                  }`}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M1 4.304 3.696 7l6-6" />
+                </svg>
               </div>
-              <TaskCard  task={task} />
+              <TaskCard task={task} />
             </div>
-            <div onClick={() => handleDelete(task.id)}>
-              <img src={cross} className="mr-3 cursor-pointer w-3 " alt="" />
+            <div className="mr-6" onClick={() => handleDelete(task.id)}>
+            <svg className="cursor-pointer  w-4 h-4" xmlns="http://www.w3.org/2000/svg" ><path fill="#494C6B" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
             </div>
           </div>
         ))}

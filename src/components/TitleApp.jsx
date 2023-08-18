@@ -14,8 +14,8 @@ const TitleApp = () => {
   }
 
   return (
-    <article className="w-[90%] flex items-center justify-between mb-6 sm:mb-10">
-      <h1 className=" font-semibold text-3xl sm:text-5xl text-white tracking-[0.4em] ">
+    <article className="w-[90%] flex items-center justify-between mb-6 sm:mb-10 ">
+      <h1 className=" font-semibold text-3xl sm:text-5xl text-white tracking-[0.4em]">
         TODO
       </h1>
       <div className="flex mb-2">
